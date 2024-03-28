@@ -6,17 +6,6 @@ const users = require("./database.json");
 var database;
 var token;
 
-// Read database.json file 
-fs.readFile("database.json", function(err, data) { 
-    
-    // Check for errors 
-    if (err) throw err; 
-
-    // Converting to JSON 
-    database = JSON.parse(data); 
-}); 
-
-
 // Import jwt for API's endpoints authentication
 const jwt = require("jsonwebtoken");
 
@@ -61,6 +50,15 @@ app.post("/register", (req, res) => {
 	// Make two variable for further use
 	let isPresent = false;
 	let isPresentIndex = null;
+
+    // Read database.json file 
+    fs.readFile("database.json", function(err, data) { 
+    
+        // Check for errors 
+        if (err) throw err; 
+
+        // Converting to JSON 
+        database = JSON.parse(data); 
 
 	// iterate a loop to the data items and
 	// check what data are matched.
@@ -117,6 +115,7 @@ app.post("/register", (req, res) => {
 			}); 
 	}
 });
+}); 
 
 
 // Login route
@@ -132,6 +131,15 @@ app.post("/auth", (req, res) => {
 	// Make two variable for further use
 	let isPresent = false;
 	let isPresentIndex = null;
+
+    // Read database.json file 
+    fs.readFile("database.json", function(err, data) { 
+    
+        // Check for errors 
+        if (err) throw err; 
+
+        // Converting to JSON 
+        database = JSON.parse(data); 
 
 	// iterate a loop to the data items and
 	// check what data are matched.
@@ -177,6 +185,7 @@ app.post("/auth", (req, res) => {
 		});
 	}
 });
+}); 
 
 // Verify route
 app.post("/verifyToken", (req, res) => {
