@@ -13,7 +13,7 @@ explain middle ware and jwt with example
 => npm install node express jsonwebtoken dotenv
 => create a file with name: .env
 => goto terminal type node and enter
-=> in the node terminal type require('crypto').randomBytes(64).toString(hex);
+=> in the node terminal type require('crypto').randomBytes(64).toString('hex');
 => the above command will generate an access_token_secret. copy it to .env file
 => again run the command and keep it as Refresh_token_secret in the .env file
 => create a file called "request.rest" and place the api request calls there
