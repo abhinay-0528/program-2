@@ -40,7 +40,7 @@
       </table>
     </div>
     <div class="w-50 mt-5 p-2 mx-auto ">
-        <h4 id="err"></h4>
+        <h4 id="err" style="display:none">User Not Found</h4>
       <a href="/" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">BACK</a>
     </div>
 </body>
@@ -65,14 +65,14 @@
               if(responseData.length!=0)
               {
                   $("#ucard").show();
-                  $("#greet").append(responseData[0].username);
-                  $("#uid").append(responseData[0].userid);
-                  $("#uname").append(responseData[0].username);
-                  $("#umail").append(responseData[0].email);
-                  $("#uoccu").append(responseData[0].occupation);
+                  $("#greet").text(responseData[0].username);
+                  $("#uid").text(responseData[0].userid);
+                  $("#uname").text(responseData[0].username);
+                  $("#umail").text(responseData[0].email);
+                  $("#uoccu").text(responseData[0].occupation);
               }
             else{
-                $("#err").append("User Not Found");
+                $("#err").show();
               }
               },
               error: function(data ){
