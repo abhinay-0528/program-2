@@ -46,9 +46,9 @@
 </body>
 <script>
     $(document).ready(function() {
-      $("#ucard").hide();
       $('#findUserForm').submit(()=>{
       event.preventDefault();
+       $("#ucard").hide();
       var email=$("#email").val();
       //find user on django db
       $.ajax({
